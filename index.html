@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./成績分級系統.css">
+</head>
+
+<body>
+    <div class="all">
+
+        <div class="back" >
+            <div class="box">
+                <div class="box-system">
+                    <h1>成績分級系統</h1>
+                    <br>
+                    <br>
+                    <h2>請輸入考試成績</h2>
+                    <br>
+                    <br>
+                    <input type="number" placeholder="請輸入成績分數" id="grade">
+                    <br>
+                    <br>
+                    <button onclick="Check()" class="btn">查詢成績</button>
+
+                    <p id="show"></p>
+                </div>
+
+                <div class="box-standard">
+
+                    <h1>成績參考標準</h1>
+                    <h2>0~59  => 您的成績不及格級</h2>
+                    <h2>60~69 => 您的成績是丁級</h2>
+                    <h2>70~79 => 您的成績是丙級</h2>
+                    <h2>80~89 => 您的成績是乙級</h2>
+                    <h2>90~99 => 您的成績是甲級</h2>
+                    <h2>100   => 您的成績是優級</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+
+
+        // console.log(grade)
+
+        function Check() {
+            var grade = document.getElementById('grade').value;
+
+
+            if (grade > 100 || grade < 0 ||grade == '' || grade.trim() == '' || ! Number.isInteger(Number(grade))) {
+                show.innerHTML = "您的成績無效";}
+
+                else if (grade == 100) {
+                    show.innerHTML = "您輸入的成績是:" + grade + "您的成績是:優級";
+                }
+                else if (grade >= 90) {
+                    show.innerHTML = "您輸入的成績是:" + grade + "您的成績是:甲級";
+                }
+                else if (grade >= 80) {
+                    show.innerHTML = "您輸入的成績是:" + grade + "您的成績是:乙級";
+                }
+                else if (grade >= 70) {
+                    show.innerHTML = "您輸入的成績是:" + grade + "您的成績是:丙級";
+                }
+                else if (grade >= 60) {
+                    show.innerHTML = "您輸入的成績是:" + grade + "您的成績是:丁級";
+                }
+                else {
+                    show.innerHTML = "您輸入的成績是:" + grade + "您的成績是:不及格";
+                };
+
+            };
+        
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
